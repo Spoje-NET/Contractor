@@ -27,7 +27,7 @@ class ContractForm extends \Ease\TWB5\Form
         parent::__construct();
         $this->contract = $contract;
 
-        $templateString = file_get_contents('/home/vitex/Projects/VitexSoftware/AbraFlexi-Contractor/templates/contract.j2');
+        $templateString = file_get_contents('../templates/contract.html.j2');
 
         $template = new Template($templateString);
         $template->withUndefined(new \ByJG\JinjaPhp\Undefined\DebugUndefined());  // Default is StrictUndefined

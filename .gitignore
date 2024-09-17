@@ -10,3 +10,5 @@
 /.build/
 /nbproject/
 /debian/abraflexi-contractor/
+/debian/abraflexi-contractor.debhelper.log
+/debian/abraflexi-contractor.substvars

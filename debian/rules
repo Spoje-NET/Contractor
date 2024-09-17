@@ -18,3 +18,4 @@ override_dh_install:
 	sed -i -e 's/..\/i18n/\/usr\/share\/locale/g'            	        debian/abraflexi-contractor/usr/share/abraflexi-contractor/init.php
 	sed -i -e 's/\.\./\/etc\/abraflexi/g'                                   debian/abraflexi-contractor/usr/share/abraflexi-contractor/init.php
 	sed -i -e 's/\.\./\/usr\/lib\/abraflexi-contractor/'       		debian/abraflexi-contractor/usr/lib/abraflexi-contractor/Contractor/*.php
+	sed -i -e 's/\.\./\/usr\/share\/abraflexi-contractor/' 			debian/abraflexi-contractor/usr/lib/abraflexi-contractor/Contractor/Ui/ContractForm.php

@@ -37,9 +37,6 @@ if (empty($kod)) {
         }
 
         $oPage->body->addItem(new Ui\ContractForm($contractor));
-        // $oPage->body->addItem('<hr>');
-        // $oPage->body->addItem( new \Ease\Html\PreTag(print_r($contractor->getData(),true)));
-
     } catch (\AbraFlexi\Exception $exc) {
         if ($exc->getCode() === 401) {
             $oPage->body->addItem(new \Ease\Html\H2Tag(_('Session Expired')));
@@ -50,5 +47,5 @@ if (empty($kod)) {
     }
 }
 
-//$oPage->addItem(new Ui\PageBottom());
+$oPage->addItem(new Ui\PageBottom());
 echo $oPage;
