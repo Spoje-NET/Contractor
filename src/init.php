@@ -23,7 +23,7 @@ session_start();
 
 new \Ease\Locale('cs_CZ', '../i18n', 'abraflexi-contractor');
 
-$oPage = WebPage::singleton( new Ui\WebPage());
+$oPage = WebPage::singleton(new Ui\WebPage());
 
 $authSessionId = $oPage->getRequestValue('authSessionId');
 $companyUrl = $oPage->getRequestValue('companyUrl');

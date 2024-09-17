@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace AbraFlexi\Contractor;
 
-use AbraFlexi\RO;
 use Ease\Html\ATag;
 use Ease\WebPage;
 
@@ -32,7 +31,7 @@ if (empty($kod)) {
     try {
         $contractor = new Contract(\AbraFlexi\Functions::code($kod));
         $oPage->setPageTitle($contractor->getRecordIdent());
-        $oPage->body->addItem( new \Ease\Html\PreTag(print_r($contractor->getData(), true)));
+        $oPage->body->addItem(new \Ease\Html\PreTag(print_r($contractor->getData(), true)));
     } catch (\AbraFlexi\Exception $exc) {
         if ($exc->getCode() === 401) {
             $oPage->body->addItem(new \Ease\Html\H2Tag(_('Session Expired')));

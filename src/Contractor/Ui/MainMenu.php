@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * This file is part of the MultiFlexi package
+ * This file is part of the AbraflexiContractor package
  *
- * https://multiflexi.eu/
+ * https://github.com/VitexSoftware/AbraFlexi-Contractor
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *
@@ -20,22 +20,24 @@ namespace AbraFlexi\Contractor\Ui;
  *
  * @author vitex
  */
-class MainMenu extends \Ease\Html\NavTag {
-
-    public function __construct() {
+class MainMenu extends \Ease\Html\NavTag
+{
+    public function __construct()
+    {
         $kod = WebPage::getRequestValue('kod');
-        $logoLink = new \Ease\Html\ATag('index.php?kod=' . $kod, new \Ease\Html\ImgTag('images/spoje-net_logo.gif', 'SpojeNet', ['height' => '24', 'class' => 'd-inline-block align-text-top']), ['class' => 'navbar-brand']);
+        $logoLink = new \Ease\Html\ATag('index.php?kod='.$kod, new \Ease\Html\ImgTag('images/spoje-net_logo.gif', 'SpojeNet', ['height' => '24', 'class' => 'd-inline-block align-text-top']), ['class' => 'navbar-brand']);
         $logoLink->addItem('&nbsp;Contractor');
         $container = new \Ease\TWB5\Container($logoLink);
 
-//        $container->addItem(new \Ease\TWB5\LinkButton('contract.php?kod='.$kod, _('Contract'), 'primary'));
-//        $container->addItem(new \Ease\TWB5\LinkButton('product.php?kod='.$kod, _('Product'), 'secondary'));
-        $container->addItem(new \Ease\TWB5\LinkButton('data.php?kod=' . $kod, '⚙️&nbsp;' . _('Data'), 'warning'));
+        //        $container->addItem(new \Ease\TWB5\LinkButton('contract.php?kod='.$kod, _('Contract'), 'primary'));
+        //        $container->addItem(new \Ease\TWB5\LinkButton('product.php?kod='.$kod, _('Product'), 'secondary'));
+        $container->addItem(new \Ease\TWB5\LinkButton('data.php?kod='.$kod, '⚙️&nbsp;'._('Data'), 'warning'));
 
         parent::__construct($container, ['class' => 'navbar navbar-expand-lg navbar-light bg-light']);
     }
 
-    public function navBarToggler() {
+    public function navBarToggler()
+    {
         return new \Ease\Html\ButtonTag(new \Ease\Html\SpanTag(null, ['class' => 'navbar-toggler-icon']), [
             'class' => 'navbar-toggler',
             'type' => 'button',
@@ -47,11 +49,12 @@ class MainMenu extends \Ease\Html\NavTag {
         ]);
     }
 
-    public function navBarCollapse() {
+    public function navBarCollapse()
+    {
         $navbarNav = new \Ease\Html\UlTag(null, ['class' => 'navbar-nav ms-auto flex-nowrap navbar-expand mb-2 mb-lg-0', 'style' => '--bs-scroll-height: 100px;']);
 
-        $navbarNav->addItemSmart(new \Ease\Html\ATag('myapps.php', new \Ease\Html\ImgTag('images/apps.svg', 'apps', ['height' => 20]) . ' ' . _('My Apps'), ['class' => 'nav-link']), ['class' => 'nav-item']);
-        $navbarNav->addItemSmart(new \Ease\Html\ATag('app.php', '➕ ' . _('Submit'), ['class' => 'nav-link']), ['class' => 'nav-item']);
+        $navbarNav->addItemSmart(new \Ease\Html\ATag('myapps.php', new \Ease\Html\ImgTag('images/apps.svg', 'apps', ['height' => 20]).' '._('My Apps'), ['class' => 'nav-link']), ['class' => 'nav-item']);
+        $navbarNav->addItemSmart(new \Ease\Html\ATag('app.php', '➕ '._('Submit'), ['class' => 'nav-link']), ['class' => 'nav-item']);
 
         return new \Ease\Html\DivTag($navbarNav, ['class' => 'collapse navbar-collapse', 'id' => 'navbarNav']);
     }

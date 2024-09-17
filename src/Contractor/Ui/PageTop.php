@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * This file is part of the MultiFlexi package
+ * This file is part of the AbraflexiContractor package
  *
- * https://multiflexi.eu/
+ * https://github.com/VitexSoftware/AbraFlexi-Contractor
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *

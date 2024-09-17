@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * This file is part of the MultiFlexi package
+ * This file is part of the AbraflexiContractor package
  *
- * https://multiflexi.eu/
+ * https://github.com/VitexSoftware/AbraFlexi-Contractor
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *
@@ -14,6 +14,7 @@ declare(strict_types=1);
  */
 
 namespace AbraFlexi\Contractor\Ui;
+
 /**
  * Description of WebPage.
  *
@@ -35,8 +36,8 @@ class WebPage extends \Ease\TWB5\WebPage
         \Ease\TWB5\Part::jQueryze();
         $this->container = $this->addItem(new \Ease\TWB5\Container());
         $this->container->setTagClass('container-fluid');
-//        $this->includeCss('css/lightbox.min.css');
-//        $this->includeJavaScript('js/lightbox.js');
+        //        $this->includeCss('css/lightbox.min.css');
+        //        $this->includeJavaScript('js/lightbox.js');
         $this->addCSS(<<<'EOD'
 
 

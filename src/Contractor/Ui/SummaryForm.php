@@ -18,11 +18,12 @@ namespace AbraFlexi\Contractor\Ui;
 use AbraFlexi\Contractor\Contract;
 use ByJG\JinjaPhp\Template;
 
-class SummaryForm extends \Ease\TWB5\Form {
-
+class SummaryForm extends \Ease\TWB5\Form
+{
     private Contract $contract;
 
-    public function __construct(Contract $contract) {
+    public function __construct(Contract $contract)
+    {
         parent::__construct();
         $this->contract = $contract;
 

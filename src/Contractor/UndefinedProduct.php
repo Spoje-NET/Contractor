@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * This file is part of the Contractor package
+ * This file is part of the AbraflexiContractor package
  *
- * https://github.com/VitexSoftware/
+ * https://github.com/VitexSoftware/AbraFlexi-Contractor
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *
@@ -14,10 +16,11 @@
 namespace AbraFlexi\Contractor;
 
 /**
- * Description of UndefinedContract
+ * Description of UndefinedContract.
  *
- * @author Vitex <info@vitexsoftware.cz> 
+ * @author Vitex <info@vitexsoftware.cz>
  */
-class UndefinedProduct extends \ByJG\JinjaPhp\Undefined\DebugUndefined {
-//put your code here
+class UndefinedProduct extends \ByJG\JinjaPhp\Undefined\DebugUndefined
+{
+    // put your code here
 }
