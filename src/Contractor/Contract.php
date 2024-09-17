@@ -45,8 +45,9 @@ class Contract extends \AbraFlexi\Smlouva {
         $this->setDataValue('firma', $firmaData);
 
         $this->setDataValue('datumPodepsani', date('j.n.Y', strtotime($this->getDataValue('datumPodepsani'))));
-        $this->setDataValue('datumUcinnosti', date('j.n.Y', strtotime($this->getDataValue('datumUcinnosti'))));
-
+        if($this->getDataValue('datumUcinnosti')){
+            $this->setDataValue('datumUcinnosti', date('j.n.Y', strtotime($this->getDataValue('datumUcinnosti'))));
+        }
         if($this->getDataValue('smlouvaOd')){
             $this->setDataValue('smlouvaOd', date('j.n.Y', strtotime($this->getDataValue('smlouvaOd'))));
         }

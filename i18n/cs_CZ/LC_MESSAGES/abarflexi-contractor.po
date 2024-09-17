@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-09-15 20:31+0200\n"
-"PO-Revision-Date: 2024-09-15 20:31+0200\n"
+"POT-Creation-Date: 2024-09-17 21:46+0200\n"
+"PO-Revision-Date: 2024-09-17 21:49+0200\n"
 "Last-Translator: Vítězslav Dvořák <vitex@vitexsoftware.cz>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -17,10 +17,24 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: ../vendor\n"
 
 #: ../src/Contractor/Ui/AppLogo.php:27 ../src/Contractor/Ui/PageBottom.php:35
-#, fuzzy
-#| msgid "AbraFlexi Invoice Enhancer"
 msgid "AbraFlexi Contractor"
-msgstr "AbraFlexi Vylepšovač faktur"
+msgstr "AbraFlexi Smluvník"
+
+#: ../src/Contractor/Ui/MainMenu.php:33
+msgid "Data"
+msgstr "Data"
+
+#: ../src/Contractor/Ui/MainMenu.php:46
+msgid "Toggle navigation"
+msgstr "Přepnutí navigace"
+
+#: ../src/Contractor/Ui/MainMenu.php:53
+msgid "My Apps"
+msgstr "Mé Aplikce"
+
+#: ../src/Contractor/Ui/MainMenu.php:54
+msgid "Submit"
+msgstr "Uložit"
 
 #: ../src/Contractor/Ui/PageBottom.php:38
 msgid "Source Code"
@@ -30,29 +44,48 @@ msgstr "Zdrojový kód"
 msgid "LinkedIN Producer page"
 msgstr "Stránka vývojáře na LinkedIN"
 
-#: ../src/index.php:28
+#: ../src/contract.php:28 ../src/data.php:29 ../src/index.php:35
+#: ../src/print.php:28
 msgid "Bad call"
 msgstr "Chybné volání"
 
-#: ../src/index.php:29
+#: ../src/contract.php:29 ../src/data.php:30 ../src/index.php:36
+#: ../src/print.php:29
 msgid "Please setup your AbraFlexi connection"
 msgstr "Prosím nastavte připojení k vašemu AbraFlexi"
 
-#: ../src/index.php:42 ../src/init.php:50
+#: ../src/contract.php:42 ../src/data.php:38 ../src/index.php:55
+#: ../src/init.php:50 ../src/print.php:42
 msgid "Session Expired"
 msgstr "Sezení vypršelo"
 
+#: ../src/data.php:26 ../src/index.php:32
+msgid "Multi Flexi"
+msgstr "Multi Flexi"
+
+#: ../src/index.php:47
+msgid "Contract"
+msgstr "Smlouva"
+
+#: ../src/index.php:48
+msgid "Product"
+msgstr "Produkt"
+
+#: ../src/index.php:49
+msgid "Transfer protocol"
+msgstr "Předávací protokol"
+
+#: ../src/index.php:50
+msgid "Summary"
+msgstr "Shrnutí"
+
 #: ../src/install.php:25
-#, fuzzy
-#| msgid "InvoiceEnhancer"
-msgid "InvoiceContractor"
-msgstr "VylepšovačFaktur"
+msgid "AbraFlexi-Contractor"
+msgstr "AbraFlexi Smluvník"
 
 #: ../src/install.php:29
-#, fuzzy
-#| msgid "AbraFlexi Invoice Enhancer"
 msgid "AbraFlexi Contractor installer"
-msgstr "AbraFlexi Vylepšovač faktur"
+msgstr "Instalátor Smluvníka pro AbraFlexi "
 
 #: ../src/install.php:42
 msgid "AbraFlexi WebView"
@@ -69,30 +102,28 @@ msgstr ""
 "prohlížeči"
 
 #: ../src/install.php:53
-#, fuzzy
-#| msgid "Install Button to AbraFlexi"
 msgid "Install Contractor's Button to AbraFlexi"
 msgstr "Instaluj tlačítko do AbraFlexi"
 
-#: ../src/install.php:72 ../src/install.php:73
-msgid "Contractor"
-msgstr ""
+#: ../src/install.php:70
+msgid "The Button with code CONTRACTOR already exists. Updating"
+msgstr "Tlačítko s kódem CONTRACTOR již existuje. Aktualizuji"
 
-#: ../src/install.php:82
-#, fuzzy
-#| msgid "Invoice Enhancer Button created"
-msgid "Contractor Button created"
-msgstr "Tlačítko vylepšovače faktur bylo vytvořeno"
+#: ../src/install.php:76 ../src/install.php:77
+msgid "Contractor"
+msgstr "Smluvník"
 
 #: ../src/install.php:86
+msgid "Contractor Button created"
+msgstr "Tlačítko Smluvníka faktur bylo vytvořeno"
+
+#: ../src/install.php:90
 msgid "My App URL"
 msgstr "URL mé aplikace"
 
-#: ../src/install.php:93
-#, fuzzy
-#| msgid "Install Button to AbraFlexi"
+#: ../src/install.php:97
 msgid "Contractor for AbraFlexi"
-msgstr "Instaluj tlačítko do AbraFlexi"
+msgstr "Smluvník pro AbraFlexi"
 
 #~ msgid "Pricelist item found. Assigning ..."
 #~ msgstr "Ceníková položka nalezena. Přiřazuji ..."

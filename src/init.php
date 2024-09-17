@@ -21,9 +21,9 @@ require_once \dirname(__DIR__).'/vendor/autoload.php';
 
 session_start();
 
-new \Ease\Locale(null, '../i18n', 'abraflexi-contractor');
+new \Ease\Locale('cs_CZ', '../i18n', 'abraflexi-contractor');
 
-$oPage = WebPage::singleton();
+$oPage = WebPage::singleton( new Ui\WebPage());
 
 $authSessionId = $oPage->getRequestValue('authSessionId');
 $companyUrl = $oPage->getRequestValue('companyUrl');

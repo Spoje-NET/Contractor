@@ -15,21 +15,14 @@ declare(strict_types=1);
 
 namespace AbraFlexi\Contractor;
 
-use AbraFlexi\Contractor\Ui\PageBottom;
-use AbraFlexi\Contractor\Ui\PageTop;
-use AbraFlexi\Contractor\Ui\WebPage;
-use AbraFlexi\Exception;
 use AbraFlexi\RO;
 use Ease\Html\ATag;
-use Ease\Html\H1Tag;
-use Ease\Html\H2Tag;
-use Ease\Html\PreTag;
+use Ease\WebPage;
 
 require './init.php';
 
+$oPage = WebPage::singleton();
 $kod = WebPage::getRequestValue('kod');
-
-$oPage->addItem(new PageTop(_('Multi Flexi')));
 
 if (empty($kod)) {
     $oPage->addStatusMessage(_('Bad call'), 'warning');
@@ -43,22 +36,16 @@ if (empty($kod)) {
             //          $invoicer->convertSelected($_REQUEST);
         }
 
-        $formTabs = new \Ease\TWB5\Tabs();
-        $formTabs->addTab(_('Contract'), new Ui\ContractForm($contractor));
-        $formTabs->addTab(_('Product'), new Ui\ProductForm($contractor));
-        $formTabs->addTab(_('Transfer protocol'), new Ui\TransferForm($contractor));
-        $formTabs->addTab(_('Summary'), new Ui\SummaryForm($contractor));
-
-        $oPage->body->addItem($formTabs);
-    } catch (Exception $exc) {
+        $oPage->body->addItem(new Ui\ContractForm($contractor));
+    } catch (\AbraFlexi\Exception $exc) {
         if ($exc->getCode() === 401) {
-            $oPage->body->addItem(new H2Tag(_('Session Expired')));
+            $oPage->body->addItem(new \Ease\Html\H2Tag(_('Session Expired')));
         } else {
-            $oPage->addItem(new H1Tag($exc->getMessage()));
-            $oPage->addItem(new PreTag($exc->getTraceAsString()));
+            $oPage->addItem(new \Ease\Html\H1Tag($exc->getMessage()));
+            $oPage->addItem(new \Ease\Html\PreTag($exc->getTraceAsString()));
         }
     }
 }
 
-$oPage->addItem(new PageBottom());
+$oPage->addItem(new Ui\PageBottom());
 echo $oPage;

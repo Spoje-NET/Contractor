@@ -18,7 +18,7 @@ namespace AbraFlexi\Contractor\Ui;
 use AbraFlexi\Contractor\Contract;
 use ByJG\JinjaPhp\Template;
 
-class ContractForm extends \Ease\TWB5\Form
+class TransferForm extends \Ease\TWB5\Form
 {
     private Contract $contract;
 
@@ -27,10 +27,10 @@ class ContractForm extends \Ease\TWB5\Form
         parent::__construct();
         $this->contract = $contract;
 
-        $templateString = file_get_contents('../templates/contract.html.j2');
+        $templateString = file_get_contents('../templates/transfer.html.j2');
 
         $template = new Template($templateString);
-        $template->withUndefined(new \AbraFlexi\Contractor\UndefinedContract());  // Default is StrictUndefined
+        $template->withUndefined(new \AbraFlexi\Contractor\UndefinedTransfer());  // Default is StrictUndefined
 
         $contractData = ['contract' => $contract->getData()];
 
