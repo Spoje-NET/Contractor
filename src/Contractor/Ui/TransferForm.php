@@ -41,7 +41,5 @@ class TransferForm extends Form
         if ($printMode === false) {
             $this->addItem(new \Ease\Html\DivTag(new \Ease\TWB5\LinkButton('transfer.php?kod='.$contract->getRecordIdent(), '🖨️&nbsp;'._('Print Transfer Protocol'), 'success btn-lg', ['target' => '_blank']), ['class' => 'd-grid gap-2']));
         }
-        
-        
     }
 }

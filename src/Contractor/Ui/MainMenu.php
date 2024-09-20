@@ -31,7 +31,8 @@ class MainMenu extends \Ease\Html\NavTag
 
         //        $container->addItem(new \Ease\TWB5\LinkButton('contract.php?kod='.$kod, _('Contract'), 'primary'));
         //        $container->addItem(new \Ease\TWB5\LinkButton('product.php?kod='.$kod, _('Product'), 'secondary'));
-        $container->addItem(new \Ease\TWB5\LinkButton('data.php?kod='.$kod, '⚙️&nbsp;'._('Data'), 'warning'));
+        $container->addItem(new \Ease\TWB5\LinkButton('template.php?kod='.$kod, '⚙️&nbsp;'._('Templates'), 'info'));
+        $container->addItem(new \Ease\TWB5\LinkButton('data.php?kod='.$kod, '⚙️&nbsp;'._('Data'), 'info'));
 
         parent::__construct($container, ['class' => 'navbar navbar-expand-lg navbar-light bg-light']);
     }

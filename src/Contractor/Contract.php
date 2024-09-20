@@ -82,7 +82,7 @@ class Contract extends \AbraFlexi\Smlouva
         }
     }
 
-    public function ensureNonempty($fieldName): void
+    public function ensureNonempty(string $fieldName): void
     {
         if (empty($this->getDataValue($fieldName))) {
             $this->setDataValue($fieldName, null);
