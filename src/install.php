@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * This file is part of the AbraflexiContractor package
  *
- * https://github.com/VitexSoftware/AbraFlexi-Contractor
+ * https://github.com/VitexSoftware/Spoje-contractor
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *
@@ -22,7 +22,7 @@ use Ease\TWB5\Row;
 use Ease\TWB5\WebPage;
 use Ease\TWB5\Widgets\Toggle;
 
-\define('EASE_APPNAME', _('AbraFlexi-Contractor'));
+\define('EASE_APPNAME', _('Spoje-contractor'));
 
 require_once \dirname(__DIR__).'/vendor/autoload.php';
 

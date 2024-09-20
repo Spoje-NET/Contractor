@@ -1,5 +1,5 @@
 {
-  "name": "deb/abraflexi-contractor",
+  "name": "deb/spoje-contractor",
   "description": "Customize and Print your AbraFlexi Contracts ",
   "type": "project",
   "authors": [
@@ -9,13 +9,14 @@
     }
   ],
   "config": {
-    "vendor-dir": "/var/lib/abraflexi-contractor"
+    "vendor-dir": "/var/lib/spoje-contractor"
   },
   "require": {
     "deb/ease-core": "*",
     "deb/abraflexi-bricks": "*",
     "deb/ease-bootstrap5-widgets": "*",
-    "deb/ease-bootstrap5-widgets-abraflexi": "*"
+    "deb/ease-bootstrap5-widgets-abraflexi": "*",
+    "byjg/jinja-php": "dev-master"
   },
   "autoload": {
     "psr-4": {
@@ -57,5 +58,5 @@
       "url": "/usr/share/php/EaseTWB5WidgetsAbraFlexi/"
     }
   ],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

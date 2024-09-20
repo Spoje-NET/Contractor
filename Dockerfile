@@ -11,11 +11,11 @@ RUN wget -O /etc/apt/trusted.gpg.d/vitexsoftware.gpg http://repo.vitexsoftware.c
 RUN apt update
 RUN apt-get -y upgrade
 RUN apt -y install apache2 libapache2-mod-php php-pear php-curl php-mbstring curl composer php-intl locales-all unzip ssmtp 
-RUN apt -y install abraflexi-contractor
+RUN apt -y install spoje-contractor
 RUN a2dissite 000-default
-RUN a2enconf abraflexi-contractor
+RUN a2enconf spoje-contractor
 
-RUN echo "<?php header('Location: /abraflexi-contractor/');" > /var/www/html/index.php ; rm /var/www/html/index.html
+RUN echo "<?php header('Location: /spoje-contractor/');" > /var/www/html/index.php ; rm /var/www/html/index.html
 
 #RUN sudo cp /usr/lib/php/${PHPVER}/php.ini-development /etc/php/${PHPVER}/apache2/php.ini
     

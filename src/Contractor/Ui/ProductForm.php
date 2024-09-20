@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * This file is part of the AbraflexiContractor package
  *
- * https://github.com/VitexSoftware/AbraFlexi-Contractor
+ * https://github.com/VitexSoftware/Spoje-contractor
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *

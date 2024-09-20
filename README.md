@@ -32,10 +32,10 @@ If the page is not called with the $authSessionId && $companyUrl parameters, it 
 Deployment
 ----------
 
-K dispozici je Docker image: https://hub.docker.com/r/vitexsoftware/abraflexi-contractor/tags
+K dispozici je Docker image: https://hub.docker.com/r/vitexsoftware/spoje-contractor/tags
 
 ```
-docker run -d -p ${OUTPORT}:${INPORT} --name ${CONTNAME} vitexsoftware/abraflexi-contractor
+docker run -d -p ${OUTPORT}:${INPORT} --name ${CONTNAME} vitexsoftware/spoje-contractor
 ```
 
 Or a Debian package for installation on a server with Debian or Ubuntu system:
@@ -48,7 +48,7 @@ sudo wget -O /usr/share/keyrings/vitexsoftware.gpg https://repo.vitexsoftware.cz
 echo "deb [signed-by=/usr/share/keyrings/vitexsoftware.gpg]  https://repo.vitexsoftware.com  $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
 sudo apt update
 
-sudo apt install abraflexi-contractor
+sudo apt install spoje-contractor
 ```
 
 
@@ -58,11 +58,11 @@ sudo apt install abraflexi-contractor
 If you are using Apache, you need to activate its configuration:
 
 ```
-a2enconf abraflexi-contractor
+a2enconf spoje-contractor
 apache2ctl restart
 ```
 
-After that, the application is available without any further configuration at http://0.0.0.0/abraflexi-contractor/
+After that, the application is available without any further configuration at http://0.0.0.0/spoje-contractor/
 
 
 ![Installer](installer.png?raw=true)

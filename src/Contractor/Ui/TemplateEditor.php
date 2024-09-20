@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * This file is part of the AbraflexiContractor package
  *
- * https://github.com/VitexSoftware/AbraFlexi-Contractor
+ * https://github.com/VitexSoftware/Spoje-contractor
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *
@@ -20,10 +20,11 @@ namespace AbraFlexi\Contractor\Ui;
  *
  * @author Vitex <info@vitexsoftware.cz>
  */
-class TemplateEditor extends \Ease\Html\DivTag {
-
+class TemplateEditor extends \Ease\Html\DivTag
+{
     #[\Override]
-    public function __construct(string $file, $properties = []) {
+    public function __construct(string $file, $properties = [])
+    {
         $properties['style'] = 'width: 100%; max-width: 1500px;';
         parent::__construct(new \Ease\Html\TextareaTag(basename($file), file_get_contents($file), ['rows' => 50, 'style' => 'width: 100%; height: 100%']), $properties);
     }

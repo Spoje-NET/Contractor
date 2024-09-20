@@ -14,8 +14,8 @@
 override_dh_install:
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"'  debian/composer.json |sponge debian/composer.json
 	dh_install
-	sed -i -e '/require_once/c\require_once "\/var\/lib\/composer\/abraflexi-contractor/autoload.php";' debian/abraflexi-contractor/usr/share/abraflexi-contractor/*.php
-	sed -i -e 's/..\/i18n/\/usr\/share\/locale/g'            	        debian/abraflexi-contractor/usr/share/abraflexi-contractor/init.php
-	sed -i -e 's/\.\./\/etc\/abraflexi/g'                                   debian/abraflexi-contractor/usr/share/abraflexi-contractor/init.php
-	sed -i -e 's/\.\./\/usr\/lib\/abraflexi-contractor/'       		debian/abraflexi-contractor/usr/lib/abraflexi-contractor/Contractor/*.php
-	sed -i -e 's/\.\./\/usr\/share\/abraflexi-contractor/' 			debian/abraflexi-contractor/usr/lib/abraflexi-contractor/Contractor/Ui/ContractForm.php
+	sed -i -e '/require_once/c\require_once "\/var\/lib\/composer\/spoje-contractor/autoload.php";' debian/spoje-contractor/usr/share/spoje-contractor/*.php
+	sed -i -e 's/..\/i18n/\/usr\/share\/locale/g'            	        debian/spoje-contractor/usr/share/spoje-contractor/init.php
+	sed -i -e 's/\.\./\/etc\/abraflexi/g'                                   debian/spoje-contractor/usr/share/spoje-contractor/init.php
+	sed -i -e 's/\.\./\/usr\/lib\/spoje-contractor/'       		debian/spoje-contractor/usr/lib/spoje-contractor/Contractor/*.php
+	sed -i -e 's/\.\./\/usr\/share\/spoje-contractor/' 			debian/spoje-contractor/usr/lib/spoje-contractor/Contractor/Ui/*Form.php

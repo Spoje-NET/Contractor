@@ -1,6 +1,13 @@
-abraflexi-contractor (0.1.0) UNRELEASED; urgency=low
+spoje-contractor (0.1.1) UNRELEASED; urgency=medium
 
+  * Template Viewer added
+
+ -- vitex <info@vitexsoftware.cz>  Fri, 20 Sep 2024 10:53:42 +0200
+
+spoje-contractor (0.1.0) unstable; urgency=low
+
+  [ Vítězslav Dvořák ]
   * Initial release. Closes: #nnnn
     <nnnn is the bug number of your ITP>
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 15 Sep 2024 20:20:16 +0200
+ -- vitex <info@vitexsoftware.cz>  Fri, 20 Sep 2024 10:53:24 +0200

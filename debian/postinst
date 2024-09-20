@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-composer-debian abraflexi-contractor
+composer-debian spoje-contractor
 
 case "$1" in
     configure)
