@@ -20,7 +20,7 @@ namespace AbraFlexi\Contractor;
  *
  * @author Vitex <info@vitexsoftware.cz>
  */
-class UndefinedContract extends \ByJG\JinjaPhp\Undefined\DebugUndefined
+class UndefinedContract extends UndefinedField
 {
     // put your code here
 }

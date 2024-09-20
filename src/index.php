@@ -39,17 +39,27 @@ if (empty($kod)) {
         $contractor = new Contract(RO::code($kod));
         $oPage->setPageTitle($contractor->getRecordIdent());
 
+        switch ($contractor->getDataValue('typSml')) {
+            case 'code:INTERNET':
+                $formTabs = new \Ease\TWB5\Tabs();
+                $formTabs->addTab(_('Contract'), new Ui\ContractForm($contractor));
+                $formTabs->addTab(_('Product'), new Ui\ProductForm($contractor));
+                $formTabs->addTab(_('Transfer protocol'), new Ui\TransferForm($contractor));
+                $formTabs->addTab(_('Summary'), new Ui\SummaryForm($contractor));
+
+                $oPage->container->addItem($formTabs);
+
+                break;
+
+            default:
+                $oPage->container->addItem(new \Ease\TWB5\Badge(sprintf(_('Unsupported contract type: %s'), \AbraFlexi\Functions::uncode($contractor->getDataValue('typSml'))), 'warning'));
+
+                break;
+        }
+
         if ($oPage->isPosted()) {
             //          $invoicer->convertSelected($_REQUEST);
         }
-
-        $formTabs = new \Ease\TWB5\Tabs();
-        $formTabs->addTab(_('Contract'), new Ui\ContractForm($contractor));
-        $formTabs->addTab(_('Product'), new Ui\ProductForm($contractor));
-        $formTabs->addTab(_('Transfer protocol'), new Ui\TransferForm($contractor));
-        $formTabs->addTab(_('Summary'), new Ui\SummaryForm($contractor));
-
-        $oPage->body->addItem($formTabs);
     } catch (Exception $exc) {
         if ($exc->getCode() === 401) {
             $oPage->body->addItem(new H2Tag(_('Session Expired')));

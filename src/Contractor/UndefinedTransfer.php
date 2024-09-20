@@ -20,7 +20,7 @@ namespace AbraFlexi\Contractor;
  *
  * @author Vitex <info@vitexsoftware.cz>
  */
-class UndefinedTransfer extends \ByJG\JinjaPhp\Undefined\DebugUndefined
+class UndefinedTransfer extends UndefinedField
 {
-    // put your code here
+    public static $problems = [];
 }

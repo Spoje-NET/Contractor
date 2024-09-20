@@ -13,14 +13,18 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace AbraFlexi\Contractor;
+namespace AbraFlexi\Contractor\Ui;
 
 /**
- * Description of UndefinedContract.
+ * Description of DataTree.
  *
  * @author Vitex <info@vitexsoftware.cz>
  */
-class UndefinedSummary extends UndefinedField
+class DataTree extends \Ease\Html\DivTag
 {
-    // put your code here
+    #[\Override]
+    public function __construct($content = null, $properties = [])
+    {
+        parent::__construct($content, $properties);
+    }
 }
