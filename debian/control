@@ -11,7 +11,8 @@ Vcs-Browser: https://github.com/Spoje-NET/Contractor
 Package: spoje-contractor
 Architecture: all
 Replaces: abraflexi-connector
-Depends: ${shlibs:Depends}, composer-debian, php-spojenet-abraflexi, php-vitexsoftware-abraflexi-bricks, php-vitexsoftware-ease-bootstrap5-widgets, php-vitexsoftware-ease-bootstrap5-widgets-abraflexi,php-vitexsoftware-abraflexi-bricks(>=1.2), php-gd
+Pre-Depends: php-gd
+Depends: ${shlibs:Depends}, composer-debian, php-spojenet-abraflexi, php-vitexsoftware-abraflexi-bricks, php-vitexsoftware-ease-bootstrap5-widgets, php-vitexsoftware-ease-bootstrap5-widgets-abraflexi,php-vitexsoftware-abraflexi-bricks(>=1.2)
 	${misc:Depends}
 Description: Customize and Print your AbraFlexi Contracts
  External Contract Application for AbraFlexi.
