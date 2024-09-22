@@ -16,7 +16,9 @@
     "deb/abraflexi-bricks": "*",
     "deb/ease-bootstrap5-widgets": "*",
     "deb/ease-bootstrap5-widgets-abraflexi": "*",
-    "byjg/jinja-php": "dev-master"
+    "byjg/jinja-php": "dev-master",
+    "phpoffice/phpword": "dev-master",
+    "mpdf/mpdf": "dev-development"
   },
   "autoload": {
     "psr-4": {
