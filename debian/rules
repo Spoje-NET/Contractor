@@ -19,3 +19,4 @@ override_dh_install:
 	sed -i -e 's/\.\./\/etc\/abraflexi/g'                                   debian/spoje-contractor/usr/share/spoje-contractor/init.php
 	sed -i -e 's/\.\./\/usr\/lib\/spoje-contractor/'       		debian/spoje-contractor/usr/lib/spoje-contractor/Contractor/*.php
 	sed -i -e 's/\.\./\/usr\/share\/spoje-contractor/' 			debian/spoje-contractor/usr/lib/spoje-contractor/Contractor/Ui/*Form.php
+	sed -i -e 's/\.\./\/usr\/share\/spoje-contractor/' 			debian/spoje-contractor/usr/share/spoje-contractor/template.php

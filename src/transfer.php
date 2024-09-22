@@ -18,11 +18,15 @@ namespace AbraFlexi\Contractor;
 use AbraFlexi\RO;
 use Ease\Html\ATag;
 use Ease\WebPage;
+use Mpdf\Mpdf;
+use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\Shared\Html as HTMLParser;
 
 require './init.php';
 
 $oPage = WebPage::singleton();
 $kod = WebPage::getRequestValue('kod');
+$format = WebPage::getRequestValue('format');
 
 if (empty($kod)) {
     $oPage->addStatusMessage(_('Bad call'), 'warning');
@@ -37,6 +41,38 @@ if (empty($kod)) {
         }
 
         $oPage->body->addItem(new Ui\TransferForm($contractor, true));
+
+        switch ($format) {
+            case 'pdf':
+                header('Content-Type: application/pdf');
+                $filename = _('TransferProtocol').'-'.\AbraFlexi\Functions::uncode($contractor->getRecordCode()).'.pdf';
+                header('Content-Disposition: attachment; filename='.$filename);
+
+                $html = $oPage->getRendered();
+                $mpdf = new Mpdf(['tempDir' => sys_get_temp_dir()]);
+                $mpdf->WriteHTML($html);
+                $mpdf->Output($filename, 'I');
+
+                break;
+            case 'docx':
+                header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessing‌ml.document'); // you should look for the real header that you need if it's not Word 2007!!!
+                $filename = _('TransferProtocol').'-'.\AbraFlexi\Functions::uncode($contractor->getRecordCode()).'.docx';
+                header('Content-Disposition: inline; filename='.$filename);
+
+                $phpWord = new PhpWord();
+                $section = $phpWord->addSection();
+                HTMLParser::addHtml($section, $oPage->getRendered(), true);
+
+                $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+                $objWriter->save('php://output');
+
+                break;
+
+            default:
+                echo $oPage;
+
+                break;
+        }
     } catch (\AbraFlexi\Exception $exc) {
         if ($exc->getCode() === 401) {
             $oPage->body->addItem(new \Ease\Html\H2Tag(_('Session Expired')));

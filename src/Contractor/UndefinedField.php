@@ -29,12 +29,13 @@ class UndefinedField implements \ByJG\JinjaPhp\Undefined\UndefinedInterface
     public function __construct(Contract $contract)
     {
         $this->contract = $contract;
+        $this->message = _('Not Found');
     }
 
     #[\Override]
     public function render($varName)
     {
         //        return "{{ {$this->message}: {$varName} }}";
-        return ''.new \Ease\TWB5\Badge("{$this->message}: {$varName}", 'danger').'';
+        return '🎯'.new \Ease\TWB5\Badge("{$this->message}: {$varName}", 'danger', ['style' => 'color: yellow']).'';
     }
 }

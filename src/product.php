@@ -40,12 +40,12 @@ if (empty($kod)) {
             //          $invoicer->convertSelected($_REQUEST);
         }
 
-        $oPage->body->addItem(new Ui\SummaryForm($contractor, true));
+        $oPage->body->addItem(new Ui\ProductForm($contractor, true));
 
         switch ($format) {
             case 'pdf':
                 header('Content-Type: application/pdf');
-                $filename = _('Summary') .'-' . \AbraFlexi\Functions::uncode($contractor->getRecordCode()).'.pdf';
+                $filename = _('ProductSpecification').'-'.\AbraFlexi\Functions::uncode($contractor->getRecordCode()).'.pdf';
                 header('Content-Disposition: attachment; filename='.$filename);
 
                 $html = $oPage->getRendered();
@@ -56,7 +56,7 @@ if (empty($kod)) {
                 break;
             case 'docx':
                 header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessing‌ml.document'); // you should look for the real header that you need if it's not Word 2007!!!
-                $filename =  _('Summary') .'-' .  \AbraFlexi\Functions::uncode($contractor->getRecordCode()).'.docx';
+                $filename = _('ProductSpecification').'-'.\AbraFlexi\Functions::uncode($contractor->getRecordCode()).'.docx';
                 header('Content-Disposition: inline; filename='.$filename);
 
                 $phpWord = new PhpWord();

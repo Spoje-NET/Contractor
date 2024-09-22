@@ -6,7 +6,9 @@
         "vitexsoftware/ease-twbootstrap5": "dev-main",
         "vitexsoftware/ease-bootstrap5-widgets-abraflexi": "dev-main",
         "vitexsoftware/ease-bootstrap5-widgets": "dev-main",
-        "byjg/jinja-php": "dev-master"
+        "byjg/jinja-php": "dev-master",
+        "phpoffice/phpword": "dev-master",
+        "mpdf/mpdf": "dev-development"
     },
     "license": "MIT",
     "authors": [
