@@ -80,6 +80,7 @@ if (empty($kod)) {
             $oPage->addItem(new \Ease\Html\H1Tag($exc->getMessage()));
             $oPage->addItem(new \Ease\Html\PreTag($exc->getTraceAsString()));
         }
+
         echo $oPage;
     }
 }
