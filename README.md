@@ -4,6 +4,7 @@ Customize and Print you AbraFlexi contracts
 =========================================
 
 [![wakatime](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/ee6a134c-910e-437e-89ad-c357ea37af50.svg)](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/ee6a134c-910e-437e-89ad-c357ea37af50)
+[![wakatime](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/57c4bdb1-c59c-4e77-99a7-9b528e48215e.svg)](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/57c4bdb1-c59c-4e77-99a7-9b528e48215e)
 
 Customize and Print your AbraFlexi Contracts 
 
