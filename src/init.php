@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * This file is part of the AbraflexiContractor package
  *
- * https://github.com/VitexSoftware/AbraFlexi-Contractor
+ * https://github.com/VitexSoftware/Spoje-contractor
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *
@@ -21,9 +21,9 @@ require_once \dirname(__DIR__).'/vendor/autoload.php';
 
 session_start();
 
-new \Ease\Locale(null, '../i18n', 'abraflexi-contractor');
+new \Ease\Locale('cs_CZ', '../i18n', 'spoje-contractor');
 
-$oPage = WebPage::singleton();
+$oPage = WebPage::singleton(new Ui\WebPage());
 
 $authSessionId = $oPage->getRequestValue('authSessionId');
 $companyUrl = $oPage->getRequestValue('companyUrl');

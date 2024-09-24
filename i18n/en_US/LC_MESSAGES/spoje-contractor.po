@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: abraflexi-enhancer 1.0\n"
-"POT-Creation-Date: 2024-09-15 20:32+0200\n"
-"PO-Revision-Date: 2024-09-15 20:32+0200\n"
+"POT-Creation-Date: 2024-09-17 21:50+0200\n"
+"PO-Revision-Date: 2024-09-20 13:51+0200\n"
 "Last-Translator: Vítězslav Dvořák <vitex@vitexsoftware.cz>\n"
 "Language-Team: VitexSoftware\n"
 "Language: en_US\n"
@@ -17,10 +17,26 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: ../vendor\n"
 
 #: ../src/Contractor/Ui/AppLogo.php:27 ../src/Contractor/Ui/PageBottom.php:35
-#, fuzzy
 #| msgid "AbraFlexi Invoice Enhancer"
 msgid "AbraFlexi Contractor"
-msgstr "AbraFlexi Invoice Enhancer"
+msgstr "AbraFlexi Contractor"
+
+#: ../src/Contractor/Ui/MainMenu.php:33
+msgid "Data"
+msgstr "Data"
+
+#: ../src/Contractor/Ui/MainMenu.php:46
+msgid "Toggle navigation"
+msgstr "Toggle navigation"
+
+#: ../src/Contractor/Ui/MainMenu.php:53
+#| msgid "My App URL"
+msgid "My Apps"
+msgstr "My Apps"
+
+#: ../src/Contractor/Ui/MainMenu.php:54
+msgid "Submit"
+msgstr "Submit"
 
 #: ../src/Contractor/Ui/PageBottom.php:38
 msgid "Source Code"
@@ -30,29 +46,51 @@ msgstr "Source Code"
 msgid "LinkedIN Producer page"
 msgstr "LinkedIN Producer page"
 
-#: ../src/index.php:28
+#: ../src/contract.php:28 ../src/data.php:29 ../src/index.php:35
+#: ../src/print.php:28
 msgid "Bad call"
 msgstr "Bad call"
 
-#: ../src/index.php:29
+#: ../src/contract.php:29 ../src/data.php:30 ../src/index.php:36
+#: ../src/print.php:29
 msgid "Please setup your AbraFlexi connection"
 msgstr "Please setup your AbraFlexi connection"
 
-#: ../src/index.php:42 ../src/init.php:50
+#: ../src/contract.php:42 ../src/data.php:38 ../src/index.php:55
+#: ../src/init.php:50 ../src/print.php:42
 msgid "Session Expired"
 msgstr "Session Expired"
 
-#: ../src/install.php:25
-#, fuzzy
+#: ../src/data.php:26 ../src/index.php:32
+msgid "Multi Flexi"
+msgstr "Multi Flexi"
+
+#: ../src/index.php:47
 #| msgid "InvoiceEnhancer"
-msgid "InvoiceContractor"
-msgstr "InvoiceEnhancer"
+msgid "Contract"
+msgstr "Contract"
+
+#: ../src/index.php:48
+msgid "Product"
+msgstr "Product"
+
+#: ../src/index.php:49
+msgid "Transfer protocol"
+msgstr "Transfer protocol"
+
+#: ../src/index.php:50
+msgid "Summary"
+msgstr "Summary"
+
+#: ../src/install.php:25
+#| msgid "AbraFlexi Invoice Enhancer"
+msgid "Spoje-contractor"
+msgstr "Spoje-contractor"
 
 #: ../src/install.php:29
-#, fuzzy
 #| msgid "AbraFlexi Invoice Enhancer"
 msgid "AbraFlexi Contractor installer"
-msgstr "AbraFlexi Invoice Enhancer"
+msgstr "AbraFlexi Contractor installer"
 
 #: ../src/install.php:42
 msgid "AbraFlexi WebView"
@@ -67,30 +105,31 @@ msgid "Open results in AbraFlexi WebView or in System default browser"
 msgstr "Open results in AbraFlexi WebView or in System default browser"
 
 #: ../src/install.php:53
-#, fuzzy
 #| msgid "Install Button to AbraFlexi"
 msgid "Install Contractor's Button to AbraFlexi"
-msgstr "Install Button to AbraFlexi"
+msgstr "Install Contractor's Button to AbraFlexi"
 
-#: ../src/install.php:72 ../src/install.php:73
+#: ../src/install.php:70
+msgid "The Button with code CONTRACTOR already exists. Updating"
+msgstr "The Button with code CONTRACTOR already exists. Updating"
+
+#: ../src/install.php:76 ../src/install.php:77
 msgid "Contractor"
-msgstr ""
-
-#: ../src/install.php:82
-#, fuzzy
-#| msgid "Invoice Enhancer Button created"
-msgid "Contractor Button created"
-msgstr "Invoice Enhancer Button created"
+msgstr "Contractor"
 
 #: ../src/install.php:86
+#| msgid "Invoice Enhancer Button created"
+msgid "Contractor Button created"
+msgstr "Contractor Button created"
+
+#: ../src/install.php:90
 msgid "My App URL"
 msgstr "My App URL"
 
-#: ../src/install.php:93
-#, fuzzy
+#: ../src/install.php:97
 #| msgid "Install Button to AbraFlexi"
 msgid "Contractor for AbraFlexi"
-msgstr "Install Button to AbraFlexi"
+msgstr "Contractor for AbraFlexi"
 
 #~ msgid "Pricelist item found. Assigning ..."
 #~ msgstr "Pricelist item found. Assigning ..."

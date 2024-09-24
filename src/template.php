@@ -19,7 +19,6 @@ use AbraFlexi\Contractor\Ui\PageBottom;
 use AbraFlexi\Contractor\Ui\PageTop;
 use AbraFlexi\Contractor\Ui\WebPage;
 use AbraFlexi\Exception;
-use AbraFlexi\RO;
 use Ease\Html\ATag;
 use Ease\Html\H1Tag;
 use Ease\Html\H2Tag;
@@ -29,33 +28,22 @@ require './init.php';
 
 $kod = WebPage::getRequestValue('kod');
 
-$oPage->addItem(new PageTop($kod.' '._('Contractor')));
+$oPage->addItem(new PageTop(_('Template')));
 
 if (empty($kod)) {
     $oPage->addStatusMessage(_('Bad call'), 'warning');
     $oPage->addItem(new ATag('install.php', _('Please setup your AbraFlexi connection')));
 } else {
     try {
-        $contractor = new Contract(RO::code($kod));
-        $oPage->setPageTitle($contractor->getRecordIdent());
+        $templateTabs = new \Ease\TWB5\Tabs();
 
-        switch ($contractor->getDataValue('typSml')) {
-            case 'code:INTERNET':
-                $formTabs = new \Ease\TWB5\Tabs();
-                $formTabs->addTab(_('Contract'), new Ui\ContractForm($contractor));
-                $formTabs->addTab(_('Product'), new Ui\ProductForm($contractor));
-                $formTabs->addTab(_('Transfer protocol'), new Ui\TransferForm($contractor));
-                $formTabs->addTab(_('Summary'), new Ui\SummaryForm($contractor));
+        $templates = glob('../templates/*.j2');
 
-                $oPage->container->addItem($formTabs);
-
-                break;
-
-            default:
-                $oPage->container->addItem(new \Ease\TWB5\Badge(sprintf(_('Unsupported contract type: %s'), \AbraFlexi\Functions::uncode($contractor->getDataValue('typSml'))), 'warning'));
-
-                break;
+        foreach ($templates as $templateFile) {
+            $templateTabs->addTab(basename($templateFile), new Ui\TemplateEditor($templateFile));
         }
+
+        $oPage->container->addItem($templateTabs);
 
         if ($oPage->isPosted()) {
             //          $invoicer->convertSelected($_REQUEST);
