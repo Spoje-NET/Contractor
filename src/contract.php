@@ -33,7 +33,7 @@ if (empty($kod)) {
     $oPage->addItem(new ATag('install.php', _('Please setup your AbraFlexi connection')));
 } else {
     try {
-        $contractor = new Contract(RO::code($kod));
+        $contractor = new Contract(\AbraFlexi\Functions::code($kod));
         $oPage->setPageTitle($contractor->getRecordIdent());
 
         if ($oPage->isPosted()) {
