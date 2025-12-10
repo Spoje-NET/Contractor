@@ -26,6 +26,8 @@ To use a DOCX template:
 - Sections/Loops: `{{#items}}...{{/items}}`
 - Nested values: `{{contract.firma.nazev}}`
 
+[Read the full DOCX Template Guide](docs/DOCX_TEMPLATES.md)
+
 Installation
 ------------
 
