@@ -43,55 +43,7 @@ if (empty($kod)) {
         $templates = glob('../templates/*.docx');
 
         foreach ($templates as $templateFile) {
-            $tempDir = sys_get_temp_dir() . '/' . uniqid('template_', true);
-            if (mkdir($tempDir)) {
-
-                $zip = new \ZipArchive();
-                if ($zip->open($templateFile) === TRUE) {
-                    if ($zip->extractTo($tempDir)) {
-                        $documentXmlPath = $tempDir . '/word/document.xml';
-                        if (file_exists($documentXmlPath)) {
-
-                            $templateString = file_get_contents($documentXmlPath);
-
-                            $template = new Template($templateString);
-//                            $template->withUndefined(new UndefinedField($contract));  // Default is StrictUndefined
-
-                            $contractData = ['contract' => $contract->getData()];
-
-                            $rendered = $template->render($contractData);
-                            
-                            file_put_contents($documentXmlPath, $rendered);
-
-                            $zip2 = new \ZipArchive();
-                            if ($zip2->open($templateFile, \ZipArchive::CREATE) === TRUE) {
-                                $files = new RecursiveIteratorIterator(
-                                    new RecursiveDirectoryIterator($tempDir),
-                                    RecursiveIteratorIterator::LEAVES_ONLY
-                                );
-
-                                foreach ($files as $name => $file) {
-                                    if (!$file->isDir()) {
-                                        $filePath = $file->getRealPath();
-                                        $relativePath = substr($filePath, strlen($tempDir) + 1);
-                                        $zip2->addFile($filePath, $relativePath);
-                                    }
-                                }
-                                $zip2->close();
-                            } else {
-                                throw new Exception('Failed to open template file for writing: ' . $templateFile);
-                            }
-                            
-                        } else {
-                            throw new Exception('Failed to find document.xml in template: ' . $templateFile);
-                        }
-                    }
-                    $zip->close();
-                } else {
-                    throw new Exception('Failed to open template file: ' . $templateFile);
-                }
-            }
-            $templateTabs->addTab(basename($templateFile), $documentXml);
+            $templateTabs->addTab(basename($templateFile), '');
         }
 
         $oPage->container->addItem($templateTabs);
