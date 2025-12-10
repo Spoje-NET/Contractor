@@ -1,0 +1,4 @@
+STARTING TYPE CHECK
+Processing /tmp/test_template.docx...
+Saved to /tmp/test_output.docx
+TEST PASSED

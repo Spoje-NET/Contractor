@@ -11,7 +11,20 @@ Customize and Print your AbraFlexi Contracts
 Usage
 -----
 
+### Templates
+ The application supports HTML templates (via Jinja2) and Word templates (via Mustache).
 
+#### DOCX Templates
+To use a DOCX template:
+1. Create a Word document.
+2. Use Mustache placeholders for variables, e.g., `{{contract.kod}}` or `{{customer.name}}`.
+3. Save the file with a `.docx` extension in the `templates/` directory.
+4. Open the application, and the template will be available for download/generation.
+
+**Supported Features:**
+- Variables: `{{variable}}`
+- Sections/Loops: `{{#items}}...{{/items}}`
+- Nested values: `{{contract.firma.nazev}}`
 
 Installation
 ------------

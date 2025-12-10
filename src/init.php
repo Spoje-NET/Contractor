@@ -18,6 +18,9 @@ namespace AbraFlexi\Contractor;
 use Ease\TWB5\WebPage;
 
 require_once \dirname(__DIR__).'/vendor/autoload.php';
+// Manual include for new classes since composer dump-autoload might not have run
+require_once __DIR__ . '/Contractor/MiniMustache.php';
+require_once __DIR__ . '/Contractor/DocxTemplate.php';
 
 session_start();
 

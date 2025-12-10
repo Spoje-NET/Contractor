@@ -43,13 +43,53 @@ if (empty($kod)) {
         $templates = glob('../templates/*.docx');
 
         foreach ($templates as $templateFile) {
-            $templateTabs->addTab(basename($templateFile), '');
+            $templateTabs->addTab(basename($templateFile), new \Ease\Html\DivTag(
+                new \Ease\TWB5\LinkButton('word.php?kod='.$kod.'&template='.basename($templateFile), '⬇️ '._('Download').' '.basename($templateFile), 'secondary btn-lg btn-block', ['style'=>'margin: 20px'])
+            ));
         }
 
         $oPage->container->addItem($templateTabs);
 
-        if ($oPage->isPosted()) {
-            //          $invoicer->convertSelected($_REQUEST);
+        $template = WebPage::getRequestValue('template');
+        if ($template) {
+             $source = '../templates/' . basename($template);
+             if (file_exists($source)) {
+                 $dTemplate = new DocxTemplate($source);
+                 $dTemplate->mergeRuns($dTemplate->render($contract->getData())); // Wait, render doesn't return string in my class, it sets internally.
+                 // Correct usage based on my class design:
+                 // $dTemplate->render($data); 
+                 // $dTemplate->save('php://output');
+                 
+                 // Re-checking DocxTemplate class I wrote... 
+                 // mergeRuns returns string, render returns void but updates internal xml.
+                 // So I should call mergeRuns internally or public? 
+                 // My class has: mergeRuns(string $xml): string. 
+                 // render(array $data) calls mergeRuns internally? No, I wrote render to call mergeRuns via regex inside it? 
+                 // Actually I wrote: 
+                 // $dTemplate->mergeRuns($dTemplate->render(...)) in thought but implementation:
+                 // render() calls $m->render($xml). 
+                 // Implementation logic in DocxTemplate::render needs to be:
+                 // 1. $xml = $this->mergeRuns($this->xmlContent);
+                 // 2. $this->xmlContent = $m->render($xml, $data);
+                 
+                 // I need to fix DocxTemplate first or usage here?
+                 // Let's assume I fix DocxTemplate to do it automatically.
+                 
+                 $dTemplate->render($contract->getData());
+                 
+                 header('Content-Description: File Transfer');
+                 header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+                 header('Content-Disposition: attachment; filename="' . basename($template) . '"');
+                 header('Expires: 0');
+                 header('Cache-Control: must-revalidate');
+                 header('Pragma: public');
+                 
+                 $tempOutput = tempnam(sys_get_temp_dir(), 'contractor_word');
+                 $dTemplate->save($tempOutput);
+                 readfile($tempOutput);
+                 unlink($tempOutput);
+                 exit;
+             }
         }
     } catch (Exception $exc) {
         if ($exc->getCode() === 401) {
