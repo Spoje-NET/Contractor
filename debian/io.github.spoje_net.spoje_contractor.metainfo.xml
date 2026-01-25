@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.spoje_net.spoje_contractor</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>spoje-contractor</name>
+  <summary>Customize and Print your AbraFlexi Contracts</summary>
+  <description>
+    <p>
+      External Contract Application for AbraFlexi.
+    </p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://github.com/Spoje-NET/Contractor</url>
+  <url type="bugtracker">https://github.com/Spoje-NET/Contractor/issues</url>
+  <developer id="io.github.spoje_net">
+    <name>Spoje.Net</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+</component>
